@@ -1,9 +1,23 @@
-from flask import Flask, render_template
-from waitress import serve
+# Author : Frances Anastasia 
+# Production Server for incoming Foil Requests
+# A service provided by Williamson Law Book Company 
 
-import uuid
-import os
 import re
+import os
+import sys
+import json
+import time 
+import uuid
+import subprocess
+
+from waitress import serve
+from flask_cors import CORS
+from datetime import datetime
+from flaskext.mysql import MySQL
+
+from passlib.hash import md5_crypt
+
+from flask import Flask, jsonify, request, redirect, url_for, render_template, send_from_directory 
 
 app = Flask(__name__)
 
