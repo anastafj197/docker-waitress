@@ -1,9 +1,9 @@
 FROM python:3.6.1-alpine
 
-WORKDIR /project
+WORKDIR /api
 
-ADD . /project
+ADD . /api
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python","flask_app.py"]
+CMD ["python", "foil_server.py"]
